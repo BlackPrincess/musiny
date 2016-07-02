@@ -36,8 +36,8 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :musiny, Musiny.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
-  database: "musiny_dev",
-  hostname: "localhost",
+  username: System.get_env("DB_USER") || "postgres",
+  password: System.get_env("DB_PASSWORD") || "postgres",
+  database: System.get_env("DB_NAME") || "musiny_dev",
+  hostname: System.get_env("DB_HOST") || "postgre95", # add "postgre95 127.0.01" to `/etc/hosts`
   pool_size: 10
