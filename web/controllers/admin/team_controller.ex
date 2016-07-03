@@ -20,7 +20,7 @@ defmodule Musiny.Admin.TeamController do
       {:ok, _team} ->
         conn
         |> put_flash(:info, "Team created successfully.")
-        |> redirect(to: team_path(conn, :index))
+        |> redirect(to: admin_team_path(conn, :index))
       {:error, changeset} ->
         render(conn, "new.html", changeset: changeset)
     end
@@ -45,7 +45,7 @@ defmodule Musiny.Admin.TeamController do
       {:ok, team} ->
         conn
         |> put_flash(:info, "Team updated successfully.")
-        |> redirect(to: team_path(conn, :show, team))
+        |> redirect(to: admin_team_path(conn, :show, team))
       {:error, changeset} ->
         render(conn, "edit.html", team: team, changeset: changeset)
     end
@@ -60,6 +60,6 @@ defmodule Musiny.Admin.TeamController do
 
     conn
     |> put_flash(:info, "Team deleted successfully.")
-    |> redirect(to: team_path(conn, :index))
+    |> redirect(to: admin_team_path(conn, :index))
   end
 end

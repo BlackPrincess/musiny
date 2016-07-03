@@ -19,7 +19,7 @@ defmodule Musiny.Router do
     get "/", PageController, :index
   end
   
-  scope "/admin", Musiny do
+  scope "/admin", Musiny, as: :admin do
     pipe_through :browser # Use the default browser stack
 
     # get "/", PageController, :index
