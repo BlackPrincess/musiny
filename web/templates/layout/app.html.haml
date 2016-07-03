@@ -9,7 +9,29 @@
     %title Hello Musiny!
     %link{href: "#{static_path(@conn, "/css/app.css")}" rel: 'stylesheet'}
   %body
-    .container
-      = render @view_module, @view_template, assigns
-
+    .columns
+      .column.is-2.side-menu
+        .container
+          %aside.menu
+            %p.menu-label
+              Menu Group
+            %ul.menu-list
+              %li 
+                %a(href: "#")
+                  Menu
+              %li
+                %a(href: "#")
+                  Menu
+            %p.menu-label
+              Menu Group
+            %ul.menu-list
+              %li
+                %a(href: "#")
+                  Menu
+              %li
+                %a(href: "#")
+                  Menu
+      .column.is-offset-2
+        %section
+          = render @view_module, @view_template, assigns
     %script{src: "#{static_path(@conn, "/js/app.js")}"}
