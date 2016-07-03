@@ -12,6 +12,11 @@
 // If you no longer want to use a dependency, remember
 // to also remove its path from "config.paths.watched".
 import "phoenix_html"
+import Vue from "vue"
+import Vuex from "vuex"
+import * as axios from "axios"
+
+Vue.use(Vuex)
 
 // Import local files
 //
