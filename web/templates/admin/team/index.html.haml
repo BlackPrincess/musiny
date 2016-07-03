@@ -1,0 +1,30 @@
+%h2 Listing teams
+%table.table
+  %thead
+    %tr
+      %th Name
+      %th Description
+      %th Purpose
+      %th Sense of values
+      %th Goal
+      %th Kpi
+      %th Parent
+      %th Establishment on
+      %th
+  %tbody
+    = for team <- @teams do
+      %tr
+        %td= team.name
+        %td= team.description
+        %td= team.purpose
+        %td= team.sense_of_values
+        %td= team.goal
+        %td= team.kpi
+        %td= team.parent_id
+        %td= team.establishment_on
+        %td.text-right
+          = link "Show", to: team_path(@conn, :show, team), class: "btn btn-default btn-xs"
+          = link "Edit", to: team_path(@conn, :edit, team), class: "btn btn-default btn-xs"
+          = link "Delete", to: team_path(@conn, :delete, team), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+    - end
+= link "New team", to: team_path(@conn, :new)

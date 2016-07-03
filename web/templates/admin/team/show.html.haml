@@ -1,0 +1,28 @@
+%h2 Show team
+%ul
+  %li
+    %strong Name:
+    = @team.name
+  %li
+    %strong Description:
+    = @team.description
+  %li
+    %strong Purpose:
+    = @team.purpose
+  %li
+    %strong Sense of values:
+    = @team.sense_of_values
+  %li
+    %strong Goal:
+    = @team.goal
+  %li
+    %strong Kpi:
+    = @team.kpi
+  %li
+    %strong Parent:
+    = @team.parent_id
+  %li
+    %strong Establishment on:
+    = @team.establishment_on
+= link "Edit", to: team_path(@conn, :edit, @team)
+= link "Back", to: team_path(@conn, :index)

@@ -1,0 +1,3 @@
+%h2 Edit team
+= render "form.html", changeset: @changeset, action: team_path(@conn, :update, @team)
+= link "Back", to: team_path(@conn, :index)
