@@ -27,7 +27,9 @@ defmodule Musiny.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", Musiny do
-  #   pipe_through :api
-  # end
+  scope "/api", Musiny, as: :api do
+    pipe_through :api
+    
+    resources "/teams", Api.TeamController, only: [:index, :show]
+  end
 end
