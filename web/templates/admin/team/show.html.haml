@@ -8,19 +8,19 @@
       %td= @team.name
     %tr
       %th(scope="row") 概要：
-      %td= @team.description
+      %td= text_to_html @team.description
     %tr
       %th(scope="row") 目的：
-      %td= @team.purpose
+      %td= text_to_html @team.purpose
     %tr
       %th(scope="row") 価値観
-      %td= @team.sense_of_values
+      %td= text_to_html @team.sense_of_values
     %tr
       %th(scope="row") 目標：
-      %td= @team.goal
+      %td= text_to_html @team.goal
     %tr
       %th(scope="row") KPI：
-      %td= @team.kpi
+      %td= text_to_html @team.kpi
     %tr
       %th(scope="row") 設立日：
       %td= @team.establishment_on
