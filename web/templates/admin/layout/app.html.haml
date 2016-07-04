@@ -17,20 +17,7 @@
               Menu Group
             %ul.menu-list
               %li 
-                %a(href: "#")
-                  Menu
-              %li
-                %a(href: "#")
-                  Menu
-            %p.menu-label
-              Menu Group
-            %ul.menu-list
-              %li
-                %a(href: "#")
-                  Menu
-              %li
-                %a(href: "#")
-                  Menu
+                = link "Team", to: admin_team_path(@conn, :index)
       .column.is-offset-2
         %section
           = render @view_module, @view_template, assigns

@@ -1,5 +1,5 @@
-%h2 Listing teams
-%table.table
+%h2.title.is-2 Listing teams
+%table.table.is-striped
   %thead
     %tr
       %th Name
@@ -23,8 +23,8 @@
         %td= team.parent_id
         %td= team.establishment_on
         %td.text-right
-          = link "Show", to: admin_team_path(@conn, :show, team), class: "btn btn-default btn-xs"
-          = link "Edit", to: admin_team_path(@conn, :edit, team), class: "btn btn-default btn-xs"
-          = link "Delete", to: admin_team_path(@conn, :delete, team), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+          = link "Show", to: admin_team_path(@conn, :show, team), class: "button is-small"
+          = link "Edit", to: admin_team_path(@conn, :edit, team), class: "button is-small"
+          = link "Delete", to: admin_team_path(@conn, :delete, team), method: :delete, data: [confirm: "Are you sure?"], class: "button is-danger is-small"
     - end
 = link "New team", to: admin_team_path(@conn, :new)
