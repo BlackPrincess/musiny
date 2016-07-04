@@ -1,3 +1,2 @@
-%h2 New team
+%h2.title.is-h2 New team
 = render "form.html", changeset: @changeset, action: admin_team_path(@conn, :create)
-= link "Back", to: admin_team_path(@conn, :index)

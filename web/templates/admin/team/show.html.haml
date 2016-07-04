@@ -1,28 +1,28 @@
-%h2 Show team
-%ul
-  %li
-    %strong Name:
-    = @team.name
-  %li
-    %strong Description:
-    = @team.description
-  %li
-    %strong Purpose:
-    = @team.purpose
-  %li
-    %strong Sense of values:
-    = @team.sense_of_values
-  %li
-    %strong Goal:
-    = @team.goal
-  %li
-    %strong Kpi:
-    = @team.kpi
-  %li
-    %strong Parent:
-    = @team.parent_id
-  %li
-    %strong Establishment on:
-    = @team.establishment_on
-= link "Edit", to: admin_team_path(@conn, :edit, @team)
-= link "Back", to: admin_team_path(@conn, :index)
+%h2.title.is-2 チーム情報
+%table.table
+  %colgroup
+    %col(style="width: 20%;min-width")
+  %tbody
+    %tr
+      %th(scope="row") チーム名：
+      %td= @team.name
+    %tr
+      %th(scope="row") 概要：
+      %td= @team.description
+    %tr
+      %th(scope="row") 目的：
+      %td= @team.purpose
+    %tr
+      %th(scope="row") 価値観
+      %td= @team.sense_of_values
+    %tr
+      %th(scope="row") 目標：
+      %td= @team.goal
+    %tr
+      %th(scope="row") KPI：
+      %td= @team.kpi
+    %tr
+      %th(scope="row") 設立日：
+      %td= @team.establishment_on
+
+= link "Back", to: admin_team_path(@conn, :index), class: "button"

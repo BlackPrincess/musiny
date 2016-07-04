@@ -9,3 +9,7 @@
   z-index: 1000;
   background-color: rgba(68, 16, 110, 0.9);
 }
+
+.main {
+  padding: 12px;
+}

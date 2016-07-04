@@ -21,5 +21,11 @@ defmodule Musiny.Team do
     struct
     |> cast(params, [:name, :description, :purpose, :sense_of_values, :goal, :kpi, :establishment_on])
     |> validate_required([:name, :description, :purpose, :sense_of_values, :goal, :kpi, :establishment_on])
+    |> validate_length(:name, max: 100)
+    |> validate_length(:description, max: 1000)
+    |> validate_length(:purpose, max: 1000)
+    |> validate_length(:sense_of_values, max: 1000)
+    |> validate_length(:goal, max: 1000)
+    |> validate_length(:kpi, max: 1000)
   end
 end

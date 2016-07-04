@@ -19,6 +19,6 @@
               %li 
                 = link "Team", to: admin_team_path(@conn, :index)
       .column.is-offset-2
-        %section
+        %main.main
           = render @view_module, @view_template, assigns
     %script{src: "#{static_path(@conn, "/js/app.js")}"}

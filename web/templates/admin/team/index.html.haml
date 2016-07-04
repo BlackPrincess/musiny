@@ -1,30 +1,22 @@
-%h2.title.is-2 Listing teams
+.columns
+  .column
+    %h2.title.is-2 Listing teams
+  .column.has-text-right
+    = link "New team", to: admin_team_path(@conn, :new), class: "button is-primary"
 %table.table.is-striped
   %thead
     %tr
-      %th Name
-      %th Description
-      %th Purpose
-      %th Sense of values
-      %th Goal
-      %th Kpi
-      %th Parent
-      %th Establishment on
+      %th チーム名
+      %th 概要
+      %th 設立日
       %th
   %tbody
     = for team <- @teams do
       %tr
         %td= team.name
         %td= team.description
-        %td= team.purpose
-        %td= team.sense_of_values
-        %td= team.goal
-        %td= team.kpi
-        %td= team.parent_id
         %td= team.establishment_on
-        %td.text-right
-          = link "Show", to: admin_team_path(@conn, :show, team), class: "button is-small"
+        %td.has-text-right
+          = link "Show", to: admin_team_path(@conn, :show, team), class: "button is-small is-info"
           = link "Edit", to: admin_team_path(@conn, :edit, team), class: "button is-small"
-          = link "Delete", to: admin_team_path(@conn, :delete, team), method: :delete, data: [confirm: "Are you sure?"], class: "button is-danger is-small"
     - end
-= link "New team", to: admin_team_path(@conn, :new)

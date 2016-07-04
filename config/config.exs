@@ -8,6 +8,8 @@ use Mix.Config
 # General application configuration
 config :musiny,
   ecto_repos: [Musiny.Repo]
+  
+config :musiny, MyApp.Gettext, default_locale: "ja"
 
 # Configures the endpoint
 config :musiny, Musiny.Endpoint,
