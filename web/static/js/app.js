@@ -24,3 +24,15 @@ Vue.use(Vuex)
 // paths "./socket" or full ones "web/static/js/socket".
 
 // import socket from "./socket"
+
+document.addEventListener('DOMContentLoaded', () => {
+  const index = new Vue({
+    el: "#app",
+    data : {
+      title: "Hello World"
+    },
+    render(h) {
+      return h("h1", {"class": "title is-1"} , this.title)
+    }
+  })
+})
