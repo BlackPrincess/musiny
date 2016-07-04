@@ -1,6 +1,7 @@
 defmodule Musiny.Admin.TeamController do
   use Musiny.Web, :controller
 
+  plug :put_layout, {Musiny.Admin.LayoutView, "app.html"}
   alias Musiny.Team
 
   def index(conn, _params) do
