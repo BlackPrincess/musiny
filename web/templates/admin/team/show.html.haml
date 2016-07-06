@@ -1,10 +1,11 @@
-%h2.title.is-2 チーム情報
+%h2 チーム情報
 %table.table
   %colgroup
-    %col(style="width: 20%;min-width")
+    %col(style="width: 20%;min-width: 90px;")
+    %col
   %tbody
     %tr
-      %th(scope="row") チーム名：
+      %th(scope="row" style="width: 20%;min-width: 90px;") チーム名：
       %td= @team.name
     %tr
       %th(scope="row") 概要：
@@ -25,4 +26,4 @@
       %th(scope="row") 設立日：
       %td= @team.establishment_on
 
-= link "Back", to: admin_team_path(@conn, :index), class: "button"
+= link "Back", to: admin_team_path(@conn, :index), class: "btn btn-default"

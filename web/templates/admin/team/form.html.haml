@@ -1,50 +1,43 @@
-= form_for @changeset, @action, fn f ->
+= form_for @changeset, @action, [class: "form-horizontal"], fn f ->
   = if @changeset.action do
     .alert.alert-danger
       %p Oops, something went wrong! Please check the errors below.
   - end
-  .control.is-horizontal
-    .control-label
-      = label f, :name, class: "label"
-    .control
-      = text_input f, :name, class: "input"
+  .form-group.col-xs-12
+    = label f, :name, class: "col-sm-3 col-md-2 control-label"
+    .col-sm-9.col-md-10
+      = text_input f, :name, class: "form-control"
     = error_tag f, :name
-  .control.is-horizontal
-    .control-label
-      = label f, :description, class: "label"
-    .control
-      = textarea f, :description, class: "textarea"
+  .form-group.col-xs-12
+    = label f, :description, class: "col-sm-3 col-md-2 control-label"
+    .col-sm-9.col-md-10
+      = textarea f, :description, class: "form-control"
     = error_tag f, :description
-  .control.is-horizontal
-    .control-label
-      = label f, :purpose, class: "label"
-    .control
-      = textarea f, :purpose, class: "textarea"
+  .form-group.col-xs-12
+    = label f, :purpose, class: "col-sm-3 col-md-2 control-label"
+    .col-sm-9.col-md-10
+      = textarea f, :purpose, class: "form-control"
     = error_tag f, :purpose
-  .control.is-horizontal
-    .control-label
-      = label f, :sense_of_values, class: "label"
-    .control
-      = textarea f, :sense_of_values, class: "textarea"
+  .form-group.col-xs-12
+    = label f, :sense_of_values, class: "col-sm-3 col-md-2 control-label"
+    .col-sm-9.col-md-10
+      = textarea f, :sense_of_values, class: "form-control"
     = error_tag f, :sense_of_values
-  .control.is-horizontal
-    .control-label
-      = label f, :goal, class: "label"
-    .control
-      = textarea f, :goal, class: "textarea"
+  .form-group.col-xs-12
+    = label f, :goal, class: "col-sm-3 col-md-2 control-label"
+    .col-sm-9.col-md-10
+      = textarea f, :goal, class: "form-control"
     = error_tag f, :goal
-  .control.is-horizontal
-    .control-label
-      = label f, :kpi, class: "label"
-    .control
-      = textarea f, :kpi, class: "textarea"
+  .form-group.col-xs-12
+    = label f, :kpi, class: "col-sm-3 col-md-2 control-label"
+    .col-sm-9.col-md-10
+      = textarea f, :kpi, class: "form-control"
     = error_tag f, :kpi
-  .control.is-horizontal
-    .control-label
-      = label f, :establishment_on, class: "label"
-    .control
-      = text_input f, :establishment_on, class: "input"
+  .form-group.col-xs-12
+    = label f, :establishment_on, class: "col-sm-3 col-md-2 control-label"
+    .col-sm-9.col-md-10
+      = text_input f, :establishment_on, class: "form-control"
       = error_tag f, :establishment_on
-  .control.has-addons.has-addons-centered
-    = submit "Submit", class: "button is-primary"
+  .form-group.col-xs-12.text-center
+    = submit "Submit", class: "btn btn-primary"
 - end
