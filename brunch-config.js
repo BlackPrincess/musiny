@@ -21,7 +21,7 @@ exports.config = {
     },
     stylesheets: {
       joinTo: {
-        "css/app.css": [],
+        "css/app.css": ["web/static/css/app.scss"],
         "css/admin/admin.css": /^(web\/static\/css\/admin)/
       },
       order: {
@@ -61,7 +61,7 @@ exports.config = {
     sass: {
       mode: 'native',
       options: {
-        includePaths: ["node_modules/bulma"]
+        includePaths: ["node_modules/bootstrap-sass/assets/stylesheets"]
       }
     }
   },

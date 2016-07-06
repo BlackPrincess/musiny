@@ -1,11 +1,6 @@
 /* This file is for your main application css. */
 @import "bootstrap";
 
-.side-menu {
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1000;
+.left-menu {
   background-color: rgba(68, 16, 110, 0.9);
 }
