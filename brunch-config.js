@@ -3,8 +3,8 @@ exports.config = {
   files: {
     javascripts: {
       joinTo: {
-        "js/app.js": ["web/static/js/app.js", "web/static/js/socket.js"],
-        "js/admin/admin.js": /^(web\/static\/js\/admin)/
+        "js/app.js": ["web/static/js/app.js", /^(node_modules)/],
+        "js/admin/admin.js": /^(web\/static\/js\/admin|node_modules)/
       }
 
       // To use a separate vendor.js bundle, specify two files path
