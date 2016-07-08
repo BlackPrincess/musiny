@@ -1,38 +1,38 @@
 = form_for @changeset, @action, [class: "form-horizontal"], fn f ->
   = if @changeset.action do
-    .alert.alert-danger
+    .alert.alert-warning
       %p Oops, something went wrong! Please check the errors below.
   - end
   .form-group.col-xs-12
     = label f, :name, class: "col-sm-3 col-md-2 control-label"
     .col-sm-9.col-md-10
       = text_input f, :name, class: "form-control"
-    = error_tag f, :name
+      = error_tag f, :name
   .form-group.col-xs-12
     = label f, :description, class: "col-sm-3 col-md-2 control-label"
     .col-sm-9.col-md-10
-      = textarea f, :description, class: "form-control"
-    = error_tag f, :description
+      = textarea f, :description, [class: "form-control", rows: 7]
+      = error_tag f, :description
   .form-group.col-xs-12
     = label f, :purpose, class: "col-sm-3 col-md-2 control-label"
     .col-sm-9.col-md-10
-      = textarea f, :purpose, class: "form-control"
-    = error_tag f, :purpose
+      = textarea f, :purpose, [class: "form-control", rows: 7]
+      = error_tag f, :purpose
   .form-group.col-xs-12
     = label f, :sense_of_values, class: "col-sm-3 col-md-2 control-label"
     .col-sm-9.col-md-10
-      = textarea f, :sense_of_values, class: "form-control"
-    = error_tag f, :sense_of_values
+      = textarea f, :sense_of_values, [class: "form-control", rows: 7]
+      = error_tag f, :sense_of_values
   .form-group.col-xs-12
     = label f, :goal, class: "col-sm-3 col-md-2 control-label"
     .col-sm-9.col-md-10
-      = textarea f, :goal, class: "form-control"
-    = error_tag f, :goal
+      = textarea f, :goal, [class: "form-control", rows: 7]
+      = error_tag f, :goal
   .form-group.col-xs-12
     = label f, :kpi, class: "col-sm-3 col-md-2 control-label"
     .col-sm-9.col-md-10
-      = textarea f, :kpi, class: "form-control"
-    = error_tag f, :kpi
+      = textarea f, :kpi, [class: "form-control", rows: 7]
+      = error_tag f, :kpi
   .form-group.col-xs-12
     = label f, :establishment_on, class: "col-sm-3 col-md-2 control-label"
     .col-sm-9.col-md-10

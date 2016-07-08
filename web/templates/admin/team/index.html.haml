@@ -1,7 +1,7 @@
 .col-sm-12
   .col-sm-10
     %h2 Listing teams
-  .col-sm-2.text-right
+  .col-sm-2.text-right{style: "padding-top: 18px"}
     = link "New team", to: admin_team_path(@conn, :new), class: "btn btn-primary"
 
 .col-sm-12
@@ -10,13 +10,13 @@
       %tr
         %th チーム名
         %th 概要
-        %th 設立日
-        %th
+        %th{style: "width: 103px"} 設立日
+        %th{style: "width: 103px"}
     %tbody
       = for team <- @teams do
         %tr
-          %td= team.name
-          %td= team.description
+          %td.ellipsis= team.name
+          %td.ellipsis= team.description
           %td= team.establishment_on
           %td.has-text-right
             = link "Show", to: admin_team_path(@conn, :show, team), class: "btn btn-sm btn-info"
