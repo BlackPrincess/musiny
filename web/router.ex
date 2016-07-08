@@ -24,6 +24,7 @@ defmodule Musiny.Router do
 
     # get "/", PageController, :index
     resources "/teams", Admin.TeamController
+    resources "/help_wanteds", Admin.HelpWantedController
   end
 
   # Other scopes may use custom stacks.

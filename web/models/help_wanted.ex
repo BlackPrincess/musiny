@@ -20,7 +20,7 @@ defmodule Musiny.HelpWanted do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:title, :job, :description, :description_of_works, :requirements, :preferable_skills, :published_at, :not_published_at])
-    |> validate_required([:title, :job, :description, :description_of_works, :requirements, :preferable_skills, :published_at, :not_published_at])
+    |> cast(params, [:team_id, :title, :job, :description, :description_of_works, :requirements, :preferable_skills, :published_at, :not_published_at])
+    |> validate_required([:team_id, :title, :job, :description, :description_of_works, :requirements, :preferable_skills])
   end
 end

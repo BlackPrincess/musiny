@@ -1,0 +1,44 @@
+= form_for @changeset, @action, [class: "form-horizontal"], fn f ->
+  = if @changeset.action do
+    .alert.alert-danger
+      %p Oops, something went wrong! Please check the errors below.
+  - end
+  .form-group.col-xs-12
+    = label f, :team_id, class: "col-sm-3 col-md-2 control-label"
+    .col-sm-9.col-md-10
+      = select f, :team_id, @team_list, class: "form-control"
+      = error_tag f, :team_id
+      
+  .form-group.col-xs-12
+    = label f, :title, class: "col-sm-3 col-md-2 control-label"
+    .col-sm-9.col-md-10
+      = text_input f, :title, class: "form-control"
+      = error_tag f, :title
+  .form-group.col-xs-12
+    = label f, :job, class: "col-sm-3 col-md-2 control-label"
+    .col-sm-9.col-md-10
+      = text_input f, :job, class: "form-control"
+      = error_tag f, :job
+  .form-group.col-xs-12
+    = label f, :description, class: "col-sm-3 col-md-2 control-label"
+    .col-sm-9.col-md-10
+      = text_input f, :description, class: "form-control"
+      = error_tag f, :description
+  .form-group.col-xs-12
+    = label f, :description_of_works, class: "col-sm-3 col-md-2 control-label"
+    .col-sm-9.col-md-10
+      = text_input f, :description_of_works, class: "form-control"
+      = error_tag f, :description_of_works
+  .form-group.col-xs-12
+    = label f, :requirements, class: "col-sm-3 col-md-2 control-label"
+    .col-sm-9.col-md-10
+      = text_input f, :requirements, class: "form-control"
+      = error_tag f, :requirements
+  .form-group.col-xs-12
+    = label f, :preferable_skills, class: "col-sm-3 col-md-2 control-label"
+    .col-sm-9.col-md-10
+      = text_input f, :preferable_skills, class: "form-control"
+      = error_tag f, :preferable_skills
+  .form-group
+    = submit "Submit", class: "btn btn-primary"
+- end
