@@ -12,8 +12,8 @@ config :logger, level: :warn
 # Configure your database
 config :musiny, Musiny.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
-  database: "musiny_test",
-  hostname: "localhost",
+  username: System.get_env("TEST_DB_USER") || System.get_env("DB_USER") || "postgres",
+  password: System.get_env("TEST_DB_PASSWORD") || System.get_env("DB_PASSWORD") || "postgres",
+  database: System.get_env("TEST_DB_NAME") || "musiny_test",
+  hostname: System.get_env("TEST_DB_HOST") || System.get_env("DB_HOST") || "postgre95", # add "postgre95 127.0.01" to `/etc/hosts`
   pool: Ecto.Adapters.SQL.Sandbox

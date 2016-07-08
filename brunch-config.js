@@ -2,7 +2,10 @@ exports.config = {
   // See http://brunch.io/#documentation for docs.
   files: {
     javascripts: {
-      joinTo: "js/app.js"
+      joinTo: {
+        "js/app.js": ["web/static/js/app.js", /^(node_modules)/],
+        "js/admin/admin.js": /^(web\/static\/js\/admin|node_modules)/
+      }
 
       // To use a separate vendor.js bundle, specify two files path
       // http://brunch.io/docs/config#-files-
@@ -20,7 +23,10 @@ exports.config = {
       // }
     },
     stylesheets: {
-      joinTo: "css/app.css",
+      joinTo: {
+        "css/app.css": ["web/static/css/app.scss"],
+        "css/admin/admin.css": /^(web\/static\/css\/admin)/
+      },
       order: {
         after: ["web/static/css/app.css"] // concat app.css last
       }
@@ -58,7 +64,7 @@ exports.config = {
     sass: {
       mode: 'native',
       options: {
-        includePaths: ["node_modules/bulma"]
+        includePaths: ["node_modules/bootstrap-sass/assets/stylesheets"]
       }
     }
   },
@@ -71,6 +77,6 @@ exports.config = {
 
   npm: {
     enabled: true,
-    whitelist: ["phoenix", "phoenix_html"]
+    whitelist: ["phoenix", "phoenix_html", "vue", "vuex", "axios"]
   }
 };

@@ -1,0 +1,29 @@
+%h2 チーム情報
+%table.table
+  %colgroup
+    %col(style="width: 20%;min-width: 90px;")
+    %col
+  %tbody
+    %tr
+      %th(scope="row" style="width: 20%;min-width: 90px;") チーム名：
+      %td= @team.name
+    %tr
+      %th(scope="row") 概要：
+      %td= text_to_html @team.description
+    %tr
+      %th(scope="row") 目的：
+      %td= text_to_html @team.purpose
+    %tr
+      %th(scope="row") 価値観
+      %td= text_to_html @team.sense_of_values
+    %tr
+      %th(scope="row") 目標：
+      %td= text_to_html @team.goal
+    %tr
+      %th(scope="row") KPI：
+      %td= text_to_html @team.kpi
+    %tr
+      %th(scope="row") 設立日：
+      %td= @team.establishment_on
+
+= link "Back", to: admin_team_path(@conn, :index), class: "btn btn-default"
