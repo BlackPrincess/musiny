@@ -1,5 +1,5 @@
 /* This file is for your main application css. */
-@import "variables";
+@import "./variables";
 $font-size-base:  14px;
 $font-size-small: 14px;
 
@@ -15,8 +15,7 @@ $padding-small-horizontal:  6px;
 $padding-xs-vertical:       2px;
 $padding-xs-horizontal:     4px;
 
-@import "bootstrap";
-@import "cosmo";
+@import "./cosmo";
 
 .wrapper {
   background-color: rgba(68, 16, 110, 0.9);

@@ -192,7 +192,7 @@ table,
 
 .progress {
   height: 8px;
-  @include box-shadow(none);
+  
   .progress-bar {
     font-size: 8px;
     line-height: 8px;
@@ -232,7 +232,7 @@ a.list-group-item {
     &.active {
       background-color: $state-warning-bg;
     }
-    
+
     &.active:hover,
     &.active:focus {
       background-color: darken($state-warning-bg, 5%);
@@ -243,7 +243,7 @@ a.list-group-item {
     &.active {
       background-color: $state-danger-bg;
     }
-    
+
     &.active:hover,
     &.active:focus {
       background-color: darken($state-danger-bg, 5%);
