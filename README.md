@@ -1,20 +1,37 @@
 # Musiny
+## Instation
 
-To start your Phoenix app:
+### For Mac(Dev)
 
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.create && mix ecto.migrate`
-  * Install Node.js dependencies with `npm install`
-  * Start Phoenix endpoint with `mix phoenix.server`
+```sh
+# Elixir
+brew install exenv
+brew install elixir-build
+echo 'export PATH="$HOME/.exenv/bin:$PATH"' >> ~/.zshenv # or ~/.bash_profile
+echo 'eval "$(exenv init -)"' >> ~/.zshenv # or ~/.bash_profile
+
+exenv install -l
+exenv install 1.2.5
+exenv global 1.2.5
+```
+
+```sh
+# Postgresql
+brew install postgres
+initdb /usr/local/var/postgres -E utf8
+postgres -D /usr/local/var/postgres
+```
+
+```sh
+# /etc/hosts
+127.0.0.1 postgre95
+```
+
+```sh
+mix deps.get
+mix ecto.create && mix ecto.migrate
+npm install
+mix phoenix.server
+```
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
-
-Ready to run in production? Please [check our deployment guides](http://www.phoenixframework.org/docs/deployment).
-
-## Learn more
-
-  * Official website: http://www.phoenixframework.org/
-  * Guides: http://phoenixframework.org/docs/overview
-  * Docs: https://hexdocs.pm/phoenix
-  * Mailing list: http://groups.google.com/group/phoenix-talk
-  * Source: https://github.com/phoenixframework/phoenix
