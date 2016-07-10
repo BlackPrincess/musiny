@@ -1,6 +1,6 @@
 .col-sm-12
   .col-sm-10
-    %h2 Listing teams
+    %h2 チーム一覧
   .col-sm-2.text-right{style: "padding-top: 18px"}
     = link "New team", to: admin_team_path(@conn, :new), class: "btn btn-primary"
 
@@ -19,6 +19,6 @@
           %td.ellipsis= team.description
           %td= team.establishment_on
           %td.has-text-right
-            = link "Show", to: admin_team_path(@conn, :show, team), class: "btn btn-sm btn-info"
-            = link "Edit", to: admin_team_path(@conn, :edit, team), class: "btn btn-sm btn-default"
+            = link "閲覧", to: admin_team_path(@conn, :show, team), class: "btn btn-sm btn-info"
+            = link "編集", to: admin_team_path(@conn, :edit, team), class: "btn btn-sm btn-default"
       - end

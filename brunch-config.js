@@ -3,7 +3,7 @@ exports.config = {
   files: {
     javascripts: {
       joinTo: {
-        "js/app.js": ["web/static/js/app.js", /^(node_modules)/],
+        "js/app.js": ["web/static/js/app/app.js", /^(node_modules)/],
         "js/admin/admin.js": /^(web\/static\/js\/admin|node_modules)/
       }
 
@@ -71,7 +71,7 @@ exports.config = {
 
   modules: {
     autoRequire: {
-      "js/app.js": ["web/static/js/app"]
+      "js/app.js": ["web/static/js/app/app.js"]
     }
   },
 

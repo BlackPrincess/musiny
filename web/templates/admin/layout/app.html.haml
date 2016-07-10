@@ -13,7 +13,9 @@
       .col-sm-3.col-md-2.col-xs-12
         %ul.nav.nav-sidebar
           %li
-            = link "Team", to: admin_team_path(@conn, :index)
+            = link "チーム", to: admin_team_path(@conn, :index)
+          %li
+            = link "求人", to: admin_help_wanted_path(@conn, :index)
       .col-sm-9.col-md-10.col-xs-12
         = render @view_module, @view_template, assigns
     %script{src: "#{static_path(@conn, "/js/admin/admin.js")}"}

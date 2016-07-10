@@ -1,0 +1,34 @@
+%h2 求人情報
+%table.table
+  %colgroup
+    %col(style="width: 20%;min-width: 90px;")
+    %col
+  %tbody
+    %tr
+      %th(scope="row" style="width: 20%;min-width: 90px;") チーム：
+      %td= @help_wanted.team.name
+    %tr
+      %th(scope="row") タイトル：
+      %td= text_to_html @help_wanted.title
+    %tr
+      %th(scope="row") 職務内容：
+      %td= text_to_html @help_wanted.job
+    %tr
+      %th(scope="row") 業務内容：
+      %td= text_to_html @help_wanted.description
+    %tr
+      %th(scope="row") 必要なスキルや経験：
+      %td= text_to_html @help_wanted.description_of_works
+    %tr
+      %th(scope="row") 歓迎するスキルや経験
+      %td= text_to_html @help_wanted.requirements
+    %tr
+      %th(scope="row") 設立日：
+      %td= @help_wanted.preferable_skills
+    %tr
+      %th(scope="row") 掲載日：
+      %td= @help_wanted.published_at
+    %tr
+      %th(scope="row") 非掲載日：
+      %td= @help_wanted.not_published_at
+= link "Back", to: admin_help_wanted_path(@conn, :index), class: "btn btn-default"

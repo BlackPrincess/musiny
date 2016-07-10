@@ -23,7 +23,8 @@ defmodule Musiny.Router do
     pipe_through :browser # Use the default browser stack
 
     # get "/", PageController, :index
-    resources "/teams", Admin.TeamController
+    resources "/teams", Admin.TeamController, except: [:delete]
+    resources "/help_wanteds", Admin.HelpWantedController, except: [:delete]
   end
 
   # Other scopes may use custom stacks.

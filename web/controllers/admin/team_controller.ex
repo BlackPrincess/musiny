@@ -51,16 +51,4 @@ defmodule Musiny.Admin.TeamController do
         render(conn, "edit.html", team: team, changeset: changeset)
     end
   end
-
-  def delete(conn, %{"id" => id}) do
-    team = Repo.get!(Team, id)
-
-    # Here we use delete! (with a bang) because we expect
-    # it to always work (and if it does not, it will raise).
-    Repo.delete!(team)
-
-    conn
-    |> put_flash(:info, "Team deleted successfully.")
-    |> redirect(to: admin_team_path(conn, :index))
-  end
 end

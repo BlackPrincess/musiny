@@ -1,0 +1,26 @@
+.col-sm-12
+  .col-sm-10
+    %h2 求人一覧
+  .col-sm-2.text-right{style: "padding-top: 18px"}
+    = link "新規作成", to: admin_help_wanted_path(@conn, :new), class: "btn btn-primary"
+
+.col-sm-12
+  %table.table.table-striped.table-responsive
+    %thead
+      %tr
+        %th 求人名
+        %th 概要
+        %th{style: "width: 103px"} 掲載日
+        %th{style: "width: 103px"}
+        %th{style: "width: 103px"}
+    %tbody
+      = for help_wanted <- @help_wanteds do
+        %tr
+          %td.ellipsis= help_wanted.title
+          %td.ellipsis= help_wanted.description
+          %td.ellipsis= help_wanted.published_at
+          %td.ellipsis= help_wanted.not_published_at
+          %td.has-text-right
+            = link "閲覧", to: admin_help_wanted_path(@conn, :show, help_wanted), class: "btn btn-sm btn-info"
+            = link "編集", to: admin_help_wanted_path(@conn, :edit, help_wanted), class: "btn btn-sm btn-default"
+      - end

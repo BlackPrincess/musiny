@@ -28,4 +28,9 @@ defmodule Musiny.Team do
     |> validate_length(:goal, max: 1000)
     |> validate_length(:kpi, max: 1000)
   end
+  
+  def for_select(query) do
+    from(t in query, select: {t.name, t.id})
+  end
+  
 end
