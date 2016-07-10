@@ -23,19 +23,19 @@ const store = new Vuex.Store({
     teams: []
   },
   mutations: {
-    'FETCH' (state, x) {
+    "FETCH" (state, x) {
       state.teams = x
     }
   },
   actions: {
     fetch(store, message) {
-      axios.get('/api/teams').then((res) => {
-        store.commit('FETCH', res.data.data)
+      axios.get("/api/teams").then((res) => {
+        store.commit("FETCH", res.data.data)
       })
     }
   },
   getters: {
-    getTeams: (state) =>  state.teams
+    getTeams: (state) => state.teams
   }
 })
 
@@ -46,7 +46,7 @@ const store = new Vuex.Store({
 
 // import socket from "./socket"
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   const index = new Vue({
     el: "#app",
     data : {},
@@ -54,13 +54,13 @@ document.addEventListener('DOMContentLoaded', () => {
       return h("ul", this.teams.map((team) => h("li", team.name)))
     },
     created() {
-      this.$store.dispatch('fetch')
+      this.$store.dispatch("fetch")
     },
     computed: mapGetters({
-      teams: 'getTeams'
+      teams: "getTeams"
     }),
     methods: mapActions({
-      fetch: 'fetch'
+      fetch: "fetch"
     }),
     store
   })

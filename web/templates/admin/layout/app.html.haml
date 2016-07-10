@@ -7,7 +7,7 @@
     %meta{content: "" name: "description"}
     %meta{content: "" name: "author"}
     %title Hello Musiny Admin!
-    %link{href: "#{static_path(@conn, "/css/admin/admin.css")}" rel: 'stylesheet'}
+    %link{href: "#{static_path(@conn, "/css/share.css")}" rel: 'stylesheet'}
   %body
     .container-fluid
       .col-sm-3.col-md-2.col-xs-12
@@ -18,4 +18,4 @@
             = link "求人", to: admin_help_wanted_path(@conn, :index)
       .col-sm-9.col-md-10.col-xs-12
         = render @view_module, @view_template, assigns
-    %script{src: "#{static_path(@conn, "/js/admin/admin.js")}"}
+    %script{src: "#{static_path(@conn, "/js/admin.js")}"}
