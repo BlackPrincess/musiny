@@ -15,29 +15,7 @@ import "phoenix_html"
 import Vue from "vue"
 import Vuex, { mapGetters, mapActions } from "vuex"
 import * as axios from "axios"
-
-Vue.use(Vuex)
-
-const store = new Vuex.Store({
-  state: {
-    teams: []
-  },
-  mutations: {
-    "FETCH" (state, x) {
-      state.teams = x
-    }
-  },
-  actions: {
-    fetch(store, message) {
-      axios.get("/api/teams").then((res) => {
-        store.commit("FETCH", res.data.data)
-      })
-    }
-  },
-  getters: {
-    getTeams: (state) => state.teams
-  }
-})
+import store from "./vuex/store"
 
 // Import local files
 //
