@@ -16,6 +16,7 @@ import Vue from "vue"
 import Vuex, { mapGetters, mapActions } from "vuex"
 import * as axios from "axios"
 import store from "./vuex/store"
+import App from "./components/layouts/App"
 
 // Import local files
 //
@@ -28,18 +29,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const index = new Vue({
     el: "#app",
     data : {},
+    components: {
+      app: App
+    },
     render(h) {
-      return h("ul", this.teams.map((team) => h("li", team.name)))
+      return h("app")
     },
     created() {
       this.$store.dispatch("fetch")
     },
-    computed: mapGetters({
-      teams: "getTeams"
-    }),
-    methods: mapActions({
-      fetch: "fetch"
-    }),
     store
   })
 })
