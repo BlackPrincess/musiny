@@ -1,7 +1,14 @@
 <template lang="jade">
   .col-sm-12
     h3 Teams
-    button.btn.btn-primary(@click="fetchTeams") Click Me
+
+    form#teamSearchForm.form.form-inline
+      fieldset
+        .form-group
+          label チーム名
+          input.form-control(name="name_cont" maxlength=100, :value="form.name_cont" @change="updateNameCont")
+        .form-group
+          button.btn.btn-primary(type="button" @click="fetchTeams") Search
     
     table.table.table-striped
       thead
@@ -18,10 +25,12 @@
 import { mapGetters, mapActions } from "vuex"
 export default {
   computed: mapGetters({
-    teams: "getTeams"
+    teams: "getTeams",
+    form: "getTeamsSearchForm"
   }),
   methods: mapActions({
-    fetchTeams: "fetchTeams"
+    fetchTeams: "fetchTeams",
+    updateNameCont: "updateTeamsSearchFormNameCont"
   })
 }
 </script>
