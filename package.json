@@ -2,11 +2,15 @@
   "repository": {},
   "license": "MIT",
   "scripts": {
-    "start": "webpack -w -c -progress",
+    "start": "run-p watch:css watch:js",
     "flow": "flow check",
-    "lint": "eslint --fix \"web/static/js/**/*.js\"",
-    "deploy": "brunch build --production",
-    "watch": "brunch watch --stdin"
+    "lint": "eslint --fix \"web/static/js/**/*.+(js|vue)\"",
+    "watch:js": "webpack -w -c -progress",
+    "css:app": "node-sass --include-path node_modules web/static/css/app/app.scss priv/static/css/app.css",
+    "css:admin": "node-sass --include-path node_modules web/static/css/admin/admin.scss priv/static/css/admin.css",
+    "watch:css": "run-p watch:css:*",
+    "watch:css:app": "watch 'npm run css:app' web/static/css/app",
+    "watch:css:admin": "watch 'npm run css:admin' web/static/css/admin"
   },
   "dependencies": {
     "axios": "^0.12.0",
@@ -32,10 +36,12 @@
     "flow-bin": "^0.28.0",
     "jade": "^1.11.0",
     "node-sass": "^3.8.0",
+    "npm-run-all": "^2.3.0",
     "sass-loader": "^4.0.0",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "vue-loader": "^9.1.2",
+    "watch": "^0.19.1",
     "webpack": "^1.13.0"
   }
 }
