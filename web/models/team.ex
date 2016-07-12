@@ -33,4 +33,11 @@ defmodule Musiny.Team do
     from(t in query, select: {t.name, t.id})
   end
   
+  def name_contains(query, name_cont) do
+    from t in query, where: like(t.name, ^"%#{name_cont || ""}%")
+  end
+  
+  def search(query, params) do
+    query |> name_contains(params["name_cont"])
+  end
 end

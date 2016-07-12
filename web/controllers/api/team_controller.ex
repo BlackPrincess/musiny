@@ -3,8 +3,10 @@ defmodule Musiny.Api.TeamController do
 
   alias Musiny.Team
 
-  def index(conn, _params) do
-    teams = Repo.all(Team)
+  def index(conn, params) do
+    teams = Team
+      |> Team.search(params)
+      |> Repo.all
     render(conn, "index.json", teams: teams)
   end
   
