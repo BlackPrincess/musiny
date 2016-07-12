@@ -35,9 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
     render(h) {
       return h("app")
     },
-    created() {
-      this.$store.dispatch("fetch")
-    },
     store
   })
 })
