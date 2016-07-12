@@ -6,15 +6,20 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    teams: []
+    teams: [],
+    currentView: "index"
   },
   mutations: {
-    "FETCH" (state, x) {
+    "FETCH_TEAMS" (state, x) {
       state.teams = x
+    },
+    "MOVE_TEAMS_INDEX" (state, x) {
+      state.currentView = "teams-index"
     }
   },
   actions: actions,
   getters: {
-    getTeams: (state) => state.teams
+    getTeams: (state) => state.teams,
+    getCurrentView: (state) => state.currentView
   }
 })

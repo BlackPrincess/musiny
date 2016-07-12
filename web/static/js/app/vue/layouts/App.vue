@@ -3,9 +3,7 @@
     .row
       app-sidebar
       section.col-sm-9.content
-        h2 Teams
-        ul.list-unstyled
-          li(v-for='team in teams') {{team.name}}
+        component(:is="currentView")
     .row
       app-footer
 </template>
@@ -14,17 +12,20 @@
 import { mapGetters, mapActions } from "vuex"
 import AppSidebar from "../shared/AppSidebar"
 import AppFooter from "../shared/AppFooter"
+// pages
+import Index from "../views/Index"
+import TeamsIndex from "../views/teams/Index"
 
 export default {
   components: {
     "app-sidebar": AppSidebar,
-    "app-footer": AppFooter
+    "app-footer": AppFooter,
+    // pages
+    "index": Index,
+    "teams-index": TeamsIndex
   },
   computed: mapGetters({
-    teams: "getTeams"
-  }),
-  methods: mapActions({
-    fetch: "fetch"
+    currentView: "getCurrentView"
   })
 }
 </script>

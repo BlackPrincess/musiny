@@ -16,7 +16,7 @@ import Vue from "vue"
 import Vuex, { mapGetters, mapActions } from "vuex"
 import * as axios from "axios"
 import store from "./vuex/store"
-import App from "./components/layouts/App"
+import App from "./vue/layouts/App"
 
 // Import local files
 //
@@ -34,9 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     render(h) {
       return h("app")
-    },
-    created() {
-      this.$store.dispatch("fetch")
     },
     store
   })

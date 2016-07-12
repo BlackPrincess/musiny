@@ -1,7 +1,11 @@
 import * as axios from "axios"
 
-export const fetch = (store, message) => {
+export const fetchTeams = (store, message) => {
   axios.get("/api/teams").then((res) => {
-    store.commit("FETCH", res.data.data)
+    store.commit("FETCH_TEAMS", res.data.data)
   })
+}
+
+export const moveTeamsIndex = (store, message) => {
+  store.commit("MOVE_TEAMS_INDEX")
 }
