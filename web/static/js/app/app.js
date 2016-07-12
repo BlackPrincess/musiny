@@ -13,8 +13,6 @@
 // to also remove its path from "config.paths.watched".
 import "phoenix_html"
 import Vue from "vue"
-import Vuex, { mapGetters, mapActions } from "vuex"
-import * as axios from "axios"
 import store from "./vuex/store"
 import App from "./vue/layouts/App"
 
@@ -26,7 +24,7 @@ import App from "./vue/layouts/App"
 // import socket from "./socket"
 
 document.addEventListener("DOMContentLoaded", () => {
-  const index = new Vue({
+  new Vue({
     el: "#app",
     data : {},
     components: {

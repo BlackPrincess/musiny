@@ -1,0 +1,31 @@
+@import "bootstrap-sass/assets/stylesheets/bootstrap";
+
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+}
+
+.app {
+  background-color: rgba(68, 16, 110, 0.1);
+
+  .sidebar {
+
+  }
+
+  .content {
+    min-height: 800px;
+    background-color: #fff;
+  }
+
+  .footer {
+    background-color: #222;
+    color: #f3f3f3;
+    min-height: 63px;
+  }
+
+  .powered-by {
+    padding-top: 21px;
+  }
+}
