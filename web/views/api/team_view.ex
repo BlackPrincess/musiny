@@ -12,6 +12,12 @@ defmodule Musiny.Api.TeamView do
   def render("team.json", %{team: team}) do
     %{id: team.id,
       name: team.name,
-      description: team.description}
+      description: team.description,
+      purpose: team.purpose,
+      sense_of_values: team.sense_of_values,
+      goal: team.goal,
+      kpi: team.kpi,
+      establishment_on: team.establishment_on
+    }
   end
 end

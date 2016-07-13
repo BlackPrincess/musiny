@@ -13,12 +13,15 @@
     table.table.table-striped
       thead
         tr
-          th Name
-          th Description
+          th チーム名
+          th 概要
+          th
       tbody
         tr(v-for='team in teams') 
           td {{team.name}}
           td {{team.description}}
+          th
+            a.btn.btn-default(@click="moveTeamsShow(team.id)") Teams
 </template>
 
 <script>
@@ -30,7 +33,8 @@ export default {
   }),
   methods: mapActions({
     fetchTeams: "fetchTeams",
-    updateNameCont: "updateTeamsSearchFormNameCont"
+    updateNameCont: "updateTeamsSearchFormNameCont",
+    moveTeamsShow: "moveTeamsShow"
   })
 }
 </script>
