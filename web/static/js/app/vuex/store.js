@@ -1,33 +1,30 @@
 import Vue from "vue"
 import Vuex from "vuex"
 import * as actions from "./actions"
+import {state as teamState, mutations as teamMutations} from "./modules/teams"
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    teams: {
-      searchForm: {
-        name_cont: ""
-      },
-      teams: []
-    },
+    teams: teamState,
     currentView: "index"
   },
-  mutations: {
-    "FETCH_TEAMS" (state, x) {
-      state.teams.teams = x
-    },
+  mutations: Object.assign(teamMutations, {
     "UPDATE_TEAMS_SEARCH_FORM_NAME_CONT" (state, x) {
       state.teams.searchForm.name_cont = x
     },
     "MOVE_TEAMS_INDEX" (state, x) {
       state.currentView = "teams-index"
     },
-  },
+    "MOVE_TEAMS_SHOW" (state, x) {
+      state.currentView = "teams-show"
+    }
+  }),
   actions: actions,
   getters: {
     getTeams: (state) => state.teams.teams,
+    getTeam: (state) => state.teams.team,
     getTeamsSearchForm: (state) => state.teams.searchForm,
     getCurrentView: (state) => state.currentView
   }
