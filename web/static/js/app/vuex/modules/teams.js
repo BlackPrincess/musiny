@@ -1,6 +1,6 @@
 import * as types from './../mutation-types'
 
-export const state = {
+const state = {
   searchForm: {
     name_cont: ""
   },
@@ -16,14 +16,19 @@ export const state = {
   }
 }
 
-export const mutations = {
+const mutations = {
   [types.FETCH_TEAMS] (state, x) {
-    state.teams.teams = x
+    state.teams = x
   },
   [types.FETCH_TEAM] (state, x) {
-    state.teams.team = x
+    state.team = x
   },
   [types.UPDATE_TEAMS_SEARCH_FORM_NAME_CONT] (state, x) {
-    state.teams.searchForm.name_cont = x
+    state.searchForm.name_cont = x
   },
+}
+
+export default {
+  state, 
+  mutations
 }
