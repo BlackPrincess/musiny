@@ -32,5 +32,6 @@ defmodule Musiny.Router do
     pipe_through :api
     
     resources "/teams", Api.TeamController, only: [:index, :show]
+    get "/teams/:id/help_wanteds", Api.TeamController, :help_wanteds
   end
 end
