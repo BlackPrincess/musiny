@@ -19,7 +19,7 @@ defmodule Musiny.Mixfile do
   def application do
     [mod: {Musiny, []},
      applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex]]
+                    :phoenix_ecto, :postgrex, :ueberauth, :ueberauth_identity, :comeonin]]
   end
 
   # Specifies which paths to compile per environment.
@@ -38,7 +38,10 @@ defmodule Musiny.Mixfile do
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.11"},
      {:cowboy, "~> 1.0"},
-     {:phoenix_haml, "~> 0.2.1"}
+     {:phoenix_haml, "~> 0.2.1"},
+     {:ueberauth, "~> 0.2"},
+     {:ueberauth_identity, "~> 0.2"},
+     {:comeonin, "~> 2.5"}
    ]
   end
 

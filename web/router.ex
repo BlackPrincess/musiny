@@ -15,6 +15,12 @@ defmodule Musiny.Router do
 
   scope "/", Musiny do
     pipe_through :browser # Use the default browser stack
+    
+    scope "/auth" do
+      get "/:provider", AuthController, :login
+      get "/:provider/callback", AuthController, :callback
+      post "/identity/callback", AuthController, :identity_callback
+    end
 
     get "/", PageController, :index
   end
