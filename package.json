@@ -19,8 +19,9 @@
     "jquery": "^3.1.0",
     "phoenix": "file:deps/phoenix",
     "phoenix_html": "file:deps/phoenix_html",
-    "vue": "2.0.0-beta.1",
-    "vuex": "2.0.0-rc.3"
+    "vue": "2.0.0-beta.5",
+    "vuex": "2.0.0-rc.3",
+    "vue-router": "v2.0.0-beta.2"
   },
   "devDependencies": {
     "babel-core": "^6.7.6",
