@@ -1,10 +1,10 @@
 <template lang="jade">
-  article.app.container-fluid
-    .row
+  .app
+    .wrapper
       app-sidebar
-      section.col-sm-9.content
+      section.main
         component(:is="currentView")
-    footer.row
+    footer
       app-footer
 </template>
 

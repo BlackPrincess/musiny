@@ -1,5 +1,5 @@
 <template lang="jade">
-  footer.col-sm-12.footer.text-center
+  footer.footer
     .powered-by Powered by BlackPrincess
 </template>
 

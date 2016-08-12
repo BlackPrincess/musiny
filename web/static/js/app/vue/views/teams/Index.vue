@@ -21,7 +21,7 @@
           td {{team.name}}
           td {{team.description}}
           th
-            a.btn.btn-default(@click="moveTeamsShow(team.id)") Teams
+            a.btn.btn-default(href="#" @click="moveTeamsShow(team.id)") Teams
 </template>
 
 <script>

@@ -1,5 +1,11 @@
-@import "bootstrap-sass/assets/stylesheets/bootstrap";
+@import "reset";
 
+$sidebar-width: 200px;
+$sidebar-box-shadow-color: #ccc;
+$sidebar-background-color: rgba(207, 207, 207, 0.28);
+$main-background-color:rgba(207, 207, 207, 0.14);
+
+$main-width: 100px;
 html,
 body {
   margin: 0px;
@@ -7,25 +13,33 @@ body {
   height: 100%;
 }
 
-.app {
-  background-color: rgba(68, 16, 110, 0.1);
+.wrapper {
+  display: flex;
+  align-items: stretch;
+}
 
-  .sidebar {
+.sidebar {
+  order: 1;
+  flex: 0 0 $sidebar-width;
+  min-height: 100vh;
+  background-color: $sidebar-background-color;
+  box-shadow: 1px 1px 5px 0px $sidebar-box-shadow-color;
+}
 
-  }
+.main {
+  order: 2;
+  flex: 1 0 $main-width;
+  
+  background-color: $main-background-color;
+}
 
-  .content {
-    min-height: 800px;
-    background-color: #fff;
-  }
+.footer {
+  height: 50px;
+  padding-top: 20px;
+  background-color: #000;
+  color: #f0f0f0;
+  text-align: center;
+}
 
-  .footer {
-    background-color: #222;
-    color: #f3f3f3;
-    min-height: 63px;
-  }
-
-  .powered-by {
-    padding-top: 21px;
-  }
+.powered-by {
 }
