@@ -2,7 +2,7 @@
   .col-sm-12
     h3 Teams
 
-    form#teamSearchForm.form.form-inline
+    form
       fieldset
         .form-group
           label チーム名
@@ -21,7 +21,7 @@
           td {{team.name}}
           td {{team.description}}
           th
-            a.btn.btn-default(href="#" @click="moveTeamsShow(team.id)") Teams
+            router-link(:to="'/app/teams/' + team.id") Show
 </template>
 
 <script>
@@ -33,8 +33,7 @@ export default {
   }),
   methods: mapActions({
     fetchTeams: "fetchTeams",
-    updateNameCont: "updateTeamsSearchFormNameCont",
-    moveTeamsShow: "moveTeamsShow"
+    updateNameCont: "updateTeamsSearchFormNameCont"
   })
 }
 </script>

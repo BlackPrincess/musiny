@@ -13,12 +13,3 @@ export const fetchTeam = (store, id) => axios.get(`/api/teams/${id}`).then((res)
 export const updateTeamsSearchFormNameCont = (store, message) => {
   store.commit("UPDATE_TEAMS_SEARCH_FORM_NAME_CONT", message.target.value)
 }
-
-// Router
-export const moveTeamsIndex = (store, message) => {
-  store.commit("MOVE_TEAMS_INDEX")
-}
-
-export const moveTeamsShow = (store, id) => {
-  fetchTeam(store, id).then((_) => store.commit("MOVE_TEAMS_SHOW"))
-}

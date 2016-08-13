@@ -5,15 +5,7 @@ const state = {
     name_cont: ""
   },
   teams: [],
-  team: {
-    name: "",
-    description: "",
-    purpose: "",
-    sense_of_values: "",
-    goal: "",
-    kpi: "",
-    establishment_on: ""
-  }
+  team: {}
 }
 
 const mutations = {

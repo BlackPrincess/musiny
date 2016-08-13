@@ -23,6 +23,7 @@ defmodule Musiny.Router do
     end
 
     get "/", PageController, :index
+    get "/app/*any", PageController, :index
   end
   
   scope "/admin", Musiny, as: :admin do

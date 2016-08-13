@@ -3,7 +3,7 @@
     h1 Musiny
     ul
       li
-        router-link(to="/teams") Teams
+        router-link(to="/app/teams") Teams
 </template>
 
 <script>

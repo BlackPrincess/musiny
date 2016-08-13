@@ -12,7 +12,7 @@ export default new VueRouter({
   mode: 'history',
   routes: [
     { path: '/', component: Index },
-    { path: '/teams', component: TeamsIndex },
-    { path: '/teams/:id', component: TeamsShow }
+    { path: '/app/teams', component: TeamsIndex },
+    { path: '/app/teams/:id', component: TeamsShow }
   ]
 })
