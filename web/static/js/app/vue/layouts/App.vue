@@ -3,31 +3,20 @@
     .wrapper
       app-sidebar
       section.main
-        component(:is="currentView")
+        transition(name="fade" mode="out-in")
+          router-view.view
     footer
       app-footer
 </template>
 
 <script>
-import { mapGetters, mapActions } from "vuex"
 import AppSidebar from "../shared/AppSidebar"
 import AppFooter from "../shared/AppFooter"
-// pages
-import Index from "../views/Index"
-import TeamsIndex from "../views/teams/Index"
-import TeamsShow from "../views/teams/Show"
 
 export default {
   components: {
     "app-sidebar": AppSidebar,
-    "app-footer": AppFooter,
-    // pages
-    "index": Index,
-    "teams-index": TeamsIndex,
-    "teams-show": TeamsShow,
-  },
-  computed: mapGetters({
-    currentView: "getCurrentView"
-  })
+    "app-footer": AppFooter
+  }
 }
 </script>

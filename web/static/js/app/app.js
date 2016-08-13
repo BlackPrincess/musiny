@@ -14,7 +14,11 @@
 import "phoenix_html"
 import Vue from "vue"
 import store from "./vuex/store"
+import router from "./router"
+import { sync } from 'vuex-router-sync'
 import App from "./vue/layouts/App"
+import AppSidebar from "./vue/shared/AppSidebar"
+import AppFooter from "./vue/shared/AppFooter"
 
 // Import local files
 //
@@ -23,16 +27,17 @@ import App from "./vue/layouts/App"
 
 // import socket from "./socket"
 
+sync(store, router)
+
 document.addEventListener("DOMContentLoaded", () => {
-  new Vue({
-    el: "#app",
-    data : {},
+  const app = new Vue({
     components: {
-      app: App
+      "app-sidebar": AppSidebar,
+      "app-footer": AppFooter
     },
-    render(h) {
-      return h("app")
-    },
-    store
+    router,
+    store,
+    ...App
   })
+  app.$mount("#app")
 })
