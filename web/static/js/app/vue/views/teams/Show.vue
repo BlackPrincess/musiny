@@ -1,24 +1,31 @@
 <template lang="jade">
-  .col-sm-12
+  .team-profile
     h3(v-text="team.name")
-    dl.dl-horizontal
-      dt 概要
-      dd
-        pre(v-text="team.description")
-      dt 目的
-      dd
-        pre(v-html="team.purpose")
-      dt 価値観
-      dd
-        pre(v-text="team.sense_of_values")
-      dt 目標
-      dd
-        pre(v-text="team.goal")
-      dt KPI
-      dd
-        pre(v-text="team.kpi")
-      dt 設立日
-      dd(v-text="team.establishment_on")
+    .team-data
+      .row
+        .title 概要
+        .data
+          p(v-text="team.description")
+      .row
+        .title 目的
+        .data
+          p(v-text="team.purpose")
+      .row
+        .title 価値観
+        .data
+          p(v-text="team.sense_of_values")
+      .row
+        .title 目標
+        .data
+          p(v-text="team.goal")
+      .row
+        .title KPI
+        .data
+          p(v-text="team.kpi")
+      .row
+        .title 設立日
+        .data
+          span(v-text="team.establishment_on")
 </template>
 
 <script>
@@ -29,6 +36,26 @@ export default {
   }),
   methods: mapActions({
     fetchTeam: "fetchTeam"
-  })
+  }),
+  beforeMount () {
+    this.fetchTeam(this.$route.params.id)
+  }
 }
 </script>
+
+<style lang="scss">
+.team-data {
+  display: table;
+  .row {
+    display: table-row;
+  }
+  
+  .title {
+    display: table-cell;
+  }
+  
+  .data {
+    display: table-cell;
+  }
+}
+</style>
